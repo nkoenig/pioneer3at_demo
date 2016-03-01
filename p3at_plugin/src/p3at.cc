@@ -23,11 +23,14 @@ int main(int argc, char **argv)
   // Subscribe to the /hokuyo laser topic
   ros::Subscriber sub = nh.subscribe("/hokuyo", 1000, cb);
 
+  ros::Rate rate(20);
+
   // Move the pioneer3at
   while (ros::ok())
   {
     cmdVelPub.publish(msg);
     ros::spinOnce();
+    rate.sleep();
   }
 
   return 0;
