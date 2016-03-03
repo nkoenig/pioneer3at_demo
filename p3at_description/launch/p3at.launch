@@ -9,7 +9,8 @@
 
 <!-- Launch gazebo -->
 <node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false"
-  output="screen" args="$(find p3at_gazebo)/worlds/p3at.world" />
+  output="screen" args="$(find p3at_gazebo)/worlds/p3at.world"/>
+
 <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
 
 <param name="robot_description" command="$(find xacro)/xacro '$(find p3at_description)/urdf/pioneer3at.urdf.xacro'" />
