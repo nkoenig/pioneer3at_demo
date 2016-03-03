@@ -151,8 +151,6 @@
     <child link="p3at_rear_right_wheel"/>
   </joint>
 
-
-<xacro:macro name="p3at_gazebo_ext">
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <updateRate>100.0</updateRate>
@@ -165,9 +163,7 @@
       <wheelDiameter>0.215</wheelDiameter>
       <robotBaseFrame>base_link</robotBaseFrame>
       <torque>200</torque>
-      <topicName>cmd_vel</topicName>
     </plugin>
   </gazebo>
-</xacro:macro>
 
 </robot>
