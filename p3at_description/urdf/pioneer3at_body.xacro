@@ -163,6 +163,9 @@
       <wheelDiameter>0.215</wheelDiameter>
       <robotBaseFrame>base_link</robotBaseFrame>
       <torque>200</torque>
+      <commandTopic>$(arg robot_name)/cmd_vel</commandTopic>
+      <odometryTopic>$(arg robot_name)/odom</odometryTopic>
+      <odometryFrame>$(arg robot_name)/odom</odometryFrame>
     </plugin>
   </gazebo>
 
