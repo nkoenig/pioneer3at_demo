@@ -51,7 +51,7 @@
   </link>
 
   <joint name="p3at_front_left_wheel_joint" type="continuous">
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <limit effort="100" velocity="100" />
     <joint_properties damping="0.7"/>
     <origin xyz="0.125 0.2010 0.11" rpy="1.5707 0 0"/>
@@ -81,7 +81,7 @@
   </link>
 
   <joint name="p3at_front_right_wheel_joint" type="continuous">
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <limit effort="100" velocity="100" />
     <joint_properties damping="0.7"/>
     <origin xyz="0.125 -0.2010 0.11" rpy="1.5707 0 0"/>
@@ -113,7 +113,7 @@
   </link>
 
   <joint name="p3at_rear_left_wheel_joint" type="continuous">
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <limit effort="100" velocity="100" />
     <joint_properties damping="0.7"/>
     <origin xyz="-0.125 0.2010 0.11" rpy="1.5707 0 0"/>
@@ -143,7 +143,7 @@
   </link>
 
   <joint name="p3at_rear_right_wheel_joint" type="continuous">
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <limit effort="100" velocity="100" />
     <joint_properties damping="0.7"/>
     <origin xyz="-0.125 -0.2010 0.11" rpy="1.5707 0 0"/>
@@ -151,16 +151,14 @@
     <child link="p3at_rear_right_wheel"/>
   </joint>
 
-
-<xacro:macro name="p3at_gazebo_ext">
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <updateRate>100.0</updateRate>
       <robotNamespace>/</robotNamespace>
       <leftFrontJoint>p3at_front_left_wheel_joint</leftFrontJoint>
       <rightFrontJoint>p3at_front_right_wheel_joint</rightFrontJoint>
-      <leftRearJoint>p3at_back_left_wheel_joint</leftRearJoint>
-      <rightRearJoint>p3at_back_right_wheel_joint</rightRearJoint>
+      <leftRearJoint>p3at_rear_left_wheel_joint</leftRearJoint>
+      <rightRearJoint>p3at_rear_right_wheel_joint</rightRearJoint>
       <wheelSeparation>0.4</wheelSeparation>
       <wheelDiameter>0.215</wheelDiameter>
       <robotBaseFrame>base_link</robotBaseFrame>
@@ -168,6 +166,5 @@
       <topicName>cmd_vel</topicName>
     </plugin>
   </gazebo>
-</xacro:macro>
 
 </robot>
