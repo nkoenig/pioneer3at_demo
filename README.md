@@ -51,7 +51,7 @@ If you want to really tax your machine, you can try
 ```
 roslaunch p3at_description lots_of_robots.launch
 ```
-This spawns 100 P3ATs and demonstrates how the above described spawn script can be used to quickly spawn large test scenarios. Note that after spawning all robots, the system requires about 9Gbytes of RAM.
+This spawns 100 P3ATs and demonstrates how the spawn script described previously can be used to quickly generate large test scenarios. Note that after spawning all robots, the system requires about 9Gbytes of RAM.
 
 # Project
 
