@@ -53,6 +53,9 @@ roslaunch p3at_description lots_of_robots.launch
 ```
 This spawns 100 P3ATs and demonstrates how the spawn script described previously can be used to quickly generate large test scenarios. Note that after spawning all robots, the system requires about 9Gbytes of RAM.
 
+![](https://github.com/nkoenig/pioneer3at_demo/wiki/images/army_of_pioneers.png)
+
+
 # Project
 
 Modify code in `~/pioneer3at_ws/src/pioneer3at_demo/p3at_plugin/src/p3at.cc`
