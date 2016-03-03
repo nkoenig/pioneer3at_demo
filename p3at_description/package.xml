@@ -8,7 +8,12 @@
 
   <license>Apache 2.0</license>
   <maintainer email="nate@osrfoundation.org">Nate Koenig</maintainer>
+  
+  <author email="nate@osrfoundation.org">Nate Koenig</author>
+  <author email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</author>
+  
   <buildtool_depend>catkin</buildtool_depend>
+  
   <run_depend>urdf</run_depend>
   <run_depend>xacro</run_depend>
 </package>
