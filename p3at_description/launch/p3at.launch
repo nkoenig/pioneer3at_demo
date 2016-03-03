@@ -6,26 +6,16 @@
 <arg name="gui" default="true"/>
 <arg name="verbose" default="false"/>
 <arg name="world_name" default="worlds/empty.world"/>
-<arg name="robot_name" default="robot1"/>
 
 <!-- Launch gazebo -->
 <node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false"
-  output="screen" args="$(find p3at_gazebo)/worlds/p3at.world"/>
-
+  output="screen" args="$(find p3at_gazebo)/worlds/p3at.world" />
 <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
 
-<param name="robot_description_$(arg robot_name)" command="$(find xacro)/xacro '$(find p3at_description)/urdf/pioneer3at.urdf.xacro' robot_name:=$(arg robot_name)" />
+<param name="robot_description" command="$(find xacro)/xacro '$(find p3at_description)/urdf/pioneer3at.urdf.xacro' robot_name:='/' " />
 
-<node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="-urdf -param /robot_description_$(arg robot_name) -namespace $(arg robot_name) -model pioneer3at_$(arg robot_name)"/>
+<node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="-urdf -param /robot_description -model pioneer3at"/>
 
-<group ns="$(arg robot_name)">
-  
-  <param name="tf_prefix" type="string" value="$(arg robot_name)" />
-  
-  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
-    <remap from="robot_description" to="robot_description_$(arg robot_name)" />
-    
-  </node>  
-</group>
+<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 </launch>
